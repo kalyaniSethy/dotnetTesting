@@ -1,0 +1,37 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:21676",
+      "sslPort": 44344
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "TripPlanner": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "launchBrowser": true,
+      "launchUrl": "Trip?id=1",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CORECLR_ENABLE_PROFILING":"1",
+        "CORECLR_PROFILER_PATH":"C:\\Users\\krist\\source\\repos\\Net5App\\InstanaLibs\\instana_tracing\\CoreRewriter_x64.dll",
+        "CORECLR_PROFILER":"{FA8F1DFF-0B62-4F84-887F-ECAC69A65DD3}",
+        "DOTNET_STARTUP_HOOKS":"C:\\Users\\krist\\source\\repos\\Net5App\\InstanaLibs\\Instana.Tracing.Core.dll",
+        "INSTANA_OMIT_CALLSTACK":"0",
+        "INSTANA_DEBUG_TRACER":"0",
+        "INSTANA_LOG_SPANS":"0"           }
+    }
+  }
+}

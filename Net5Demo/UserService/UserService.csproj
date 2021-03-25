@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Instana.Tracing.Core.Rewriter.Windows" Version="1.191.20" />
+    <PackageReference Include="Instana.Tracing.Core" Version="1.191.20" />
+    <PackageReference Include="Instana.Tracing.Core.Sdk" Version="1.188.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+</Project>

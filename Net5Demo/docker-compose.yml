@@ -1,0 +1,49 @@
+version: "3.3"
+services:
+  tripplanner-api:
+    container_name: tripplanner-api
+    image: tripplanner.instana.demo:latest
+    ports: 
+      - 5000:5000
+    links:
+      - dataservice
+      - userservice
+    build:
+      context: ./TripPlanner
+      dockerfile: Dockerfile
+    depends_on: 
+      - dataservice
+      - userservice
+  dataservice:
+    ports: 
+      - 5001:5001
+    links:
+      - userservice
+      - storage
+    container_name: dataservice-api
+    image: dataservice.instana.demo:latest
+    build:
+      context: ./DataService
+      dockerfile: Dockerfile
+    depends_on: 
+      - storage
+  userservice:
+    ports: 
+      - 5002:5002
+    links:
+      - storage
+    container_name: userservice-api
+    image: userservice.instana.demo:latest
+    build:
+      context: ./UserService
+      dockerfile: Dockerfile
+    depends_on: 
+      - storage
+  storage:
+    ports: 
+      - 1433:1433
+    container_name: trip-sql
+    image: trip-sql.instana.demo:latest
+    build:
+      context: ./sqlserver
+      dockerfile: Dockerfile
